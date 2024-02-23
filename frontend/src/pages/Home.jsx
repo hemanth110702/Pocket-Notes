@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import apiClient from "../services/apiClient";
 import { useNotesContext } from "../context/NotesContext";
+import NoteDetails from "../components/NoteDetails";
+import CreateNote from "../components/CreateNote";
 
 const Home = () => {
   const { notes, dispatch } = useNotesContext();
+  const [showCreateNote, setShowCreateNote] = useState(false);
+  const [showNote, setShowNote] = useState(false);
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -20,19 +24,17 @@ const Home = () => {
     fetchNotes();
   }, []);
 
+  const addNote = () => {
+    setShowCreateNote(true);
+  };
+
   return (
     <div>
       <h1>Home</h1>
+      <button onClick={addNote}>New</button> <br />
       <input type="search" className="border-2 border-red-500 " />
-      {notes &&
-        notes.map((note) => (
-          <div className="border-2 border-red-500 m-2">
-            <p>title: {note.title}</p>
-            <p>content: {note.content}</p>
-            <p>Created: {note.createdAt}</p>
-            <p>Last Updated: {note.updatedAt}</p>
-          </div>
-        ))}
+      {notes && notes.map((note) => <NoteDetails note={note} />)}
+      {showCreateNote && <CreateNote setShowCreateNote={setShowCreateNote} />}
     </div>
   );
 };
