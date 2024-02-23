@@ -6,7 +6,13 @@ const noteRoute = require("./Routes/noteRoute");
 const cors = require("cors");
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+    allowedHeaders: ["Authorization", "Content-Type"],
+  })
+);
 app.use(express.json());
 app.use("/api/notes", noteRoute);
 
