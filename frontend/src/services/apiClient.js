@@ -1,17 +1,17 @@
 import axios from "axios";
 
-const baseUrls = {
-  development: "http://localhost:7000",
+const baseURLs = {
+  development: "http://localhost:7000/",
   production: "",
 };
 
-const baseUrl =
+const baseURL =
   process.env.NODE_ENV === "production"
-    ? baseUrls.production
-    : baseUrls.development;
+    ? baseURLs.production
+    : baseURLs.development;
 
 export default axios.create({
-  baseUrl,
+  baseURL,
   headers: {
     "Content-Type": "application/json",
   },
