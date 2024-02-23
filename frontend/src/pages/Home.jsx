@@ -3,11 +3,12 @@ import apiClient from "../services/apiClient";
 import { useNotesContext } from "../context/NotesContext";
 import NoteDetails from "../components/NoteDetails";
 import CreateNote from "../components/CreateNote";
+import DisplayNote from "../components/DisplayNote";
 
 const Home = () => {
   const { notes, dispatch } = useNotesContext();
   const [showCreateNote, setShowCreateNote] = useState(false);
-  const [showNote, setShowNote] = useState(false);
+  const [displayNote, setDisplayNote] = useState(false);
 
   useEffect(() => {
     const fetchNotes = async () => {
@@ -22,7 +23,7 @@ const Home = () => {
         });
     };
     fetchNotes();
-  }, []);
+  }, [dispatch]);
 
   const addNote = () => {
     setShowCreateNote(true);
@@ -33,8 +34,17 @@ const Home = () => {
       <h1>Home</h1>
       <button onClick={addNote}>New</button> <br />
       <input type="search" className="border-2 border-red-500 " />
-      {notes && notes.map((note) => <NoteDetails note={note} />)}
+      {notes &&
+        notes.map((note) => (
+          <NoteDetails note={note} setDisplayNote={setDisplayNote} />
+        ))}
       {showCreateNote && <CreateNote setShowCreateNote={setShowCreateNote} />}
+      {displayNote && (
+        <DisplayNote
+          displayNote={displayNote}
+          setDisplayNote={setDisplayNote}
+        />
+      )}
     </div>
   );
 };

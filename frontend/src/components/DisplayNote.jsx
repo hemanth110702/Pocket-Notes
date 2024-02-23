@@ -2,34 +2,31 @@ import React, { useState } from "react";
 import { useNotesContext } from "../context/NotesContext";
 import apiClient from "../services/apiClient";
 
-const CreateNote = ({setShowCreateNote}) => {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+const DisplayNote = ({ displayNote, setDisplayNote }) => {
+  const { notes, dispatch } = useNotesContext();
+  const note = notes.filter((note) => note._id === displayNote);
+  const [title, setTitle] = useState(note[0].title);
+  const [content, setContent] = useState(note[0].content);
   const [error, setError] = useState("");
 
-  const { dispatch } = useNotesContext();
-
-  const createNote = async (e) => {
+  const updateNote = async (e) => {
     e.preventDefault();
     await apiClient
-      .post("/api/notes", {
-        title,
-        content,
-      })
+      .patch(`/api/notes/${note[0]._id}`, { title, content })
       .then((response) => {
         console.log(response);
-        dispatch({ type: "CREATE_NOTE", payload: response.data });
+        dispatch({ type: "UPDATE_NOTE", payload: response.data });
         setError("");
       })
       .catch((err) => {
         console.log(err);
         setError(err.response.data);
       });
-    setShowCreateNote(false)
+    setDisplayNote(false);
   };
 
   return (
-    <form className="border-2 border-red-500" onSubmit={createNote}>
+    <form className="border-2 border-red-500" onSubmit={updateNote}>
       <label htmlFor="title">Title</label>
       <input
         type="text"
@@ -47,10 +44,10 @@ const CreateNote = ({setShowCreateNote}) => {
         onChange={(e) => setContent(e.target.value)}
         required
       />
-      <button>Create</button>
+      <button>Update</button>
       {error && <div>{error}</div>}
     </form>
   );
 };
 
-export default CreateNote;
+export default DisplayNote;

@@ -12,7 +12,7 @@ export const noteReducer = (state, action) => {
     case "UPDATE_NOTE":
       return {
         notes: state.notes.filter((note) => {
-          if (note.id == action.payload.id) {
+          if (note._id === action.payload._id) {
             note.title = action.payload.title;
             note.content = action.payload.content;
           }
