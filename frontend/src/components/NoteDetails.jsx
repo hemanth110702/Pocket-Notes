@@ -1,7 +1,6 @@
 import React from "react";
 
 const NoteDetails = ({ note, setDisplayNote }) => {
-  
   const selectedNote = () => {
     setDisplayNote(note._id);
   };

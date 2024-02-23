@@ -25,8 +25,22 @@ const DisplayNote = ({ displayNote, setDisplayNote }) => {
     setDisplayNote(false);
   };
 
+  const deleteNote = async () => {
+    await apiClient
+      .delete(`/api/notes/${note[0]._id}`)
+      .then((response) => {
+        console.log(response);
+        dispatch({ type: "DELETE_NOTE", payload: { _id: note[0]._id } });
+        setError("");
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(err.response.data);
+      });
+  };
+
   return (
-    <form className="border-2 border-red-500" onSubmit={updateNote}>
+    <form className="border-2 border-red-500">
       <label htmlFor="title">Title</label>
       <input
         type="text"
@@ -44,7 +58,8 @@ const DisplayNote = ({ displayNote, setDisplayNote }) => {
         onChange={(e) => setContent(e.target.value)}
         required
       />
-      <button>Update</button>
+      <button onClick={updateNote}>Update</button>
+      <button onClick={() => deleteNote(note._id)}>Delete</button>
       {error && <div>{error}</div>}
     </form>
   );

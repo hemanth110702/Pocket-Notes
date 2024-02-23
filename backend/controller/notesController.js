@@ -1,5 +1,5 @@
 const Joi = require("joi");
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 const Note = require("../model/noteModel");
 
 const createNote = async (req, res) => {
@@ -32,7 +32,7 @@ const getNote = async (req, res) => {
 
 const getNotes = async (req, res) => {
   try {
-    const notes = await Note.find(); 
+    const notes = await Note.find();
     return res.status(200).send(notes);
   } catch (err) {
     console.log(err);
@@ -53,7 +53,11 @@ const updateNote = async (req, res) => {
   const { title, content } = req.body;
 
   try {
-    const note =await  Note.findByIdAndUpdate(id, { title, content }, { new: true });
+    const note = await Note.findByIdAndUpdate(
+      id,
+      { title, content },
+      { new: true }
+    );
     if (!note) return res.status(404).send("The note was not found");
     return res.status(200).send(note);
   } catch (err) {
@@ -68,9 +72,7 @@ const deleteNote = async (req, res) => {
     return res.status(400).send("Invalid note ID");
 
   try {
-    const note = await Note.findByIdAndRemove(id);
-    if (!note)
-      return res.status(404).send("The note with given id was not found");
+    await Note.findByIdAndDelete(id);
     return res.status(200).send("The note was deleted");
   } catch (err) {
     console.log(err);
