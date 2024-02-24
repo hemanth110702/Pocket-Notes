@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNotesContext } from "../context/NotesContext";
 import apiClient from "../services/apiClient";
+import { useAuthContext } from "../context/AuthContext";
 
-const CreateNote = ({setShowCreateNote}) => {
+const CreateNote = ({ setShowCreateNote }) => {
+  const { user } = useAuthContext();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [error, setError] = useState("");
@@ -12,10 +14,19 @@ const CreateNote = ({setShowCreateNote}) => {
   const createNote = async (e) => {
     e.preventDefault();
     await apiClient
-      .post("/api/notes", {
-        title,
-        content,
-      })
+      .post(
+        "/api/notes",
+        {
+          title,
+          content,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      )
       .then((response) => {
         console.log(response);
         dispatch({ type: "CREATE_NOTE", payload: response.data });
@@ -25,7 +36,7 @@ const CreateNote = ({setShowCreateNote}) => {
         console.log(err);
         setError(err.response.data);
       });
-    setShowCreateNote(false)
+    setShowCreateNote(false);
   };
 
   return (

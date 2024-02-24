@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useNotesContext } from "../context/NotesContext";
 import apiClient from "../services/apiClient";
+import { useAuthContext } from "../context/AuthContext";
 
 const DisplayNote = ({ displayNote, setDisplayNote }) => {
+  const { user } = useAuthContext();
   const { notes, dispatch } = useNotesContext();
   const note = notes.filter((note) => note._id === displayNote);
   const [title, setTitle] = useState(note[0].title);
@@ -12,7 +14,16 @@ const DisplayNote = ({ displayNote, setDisplayNote }) => {
   const updateNote = async (e) => {
     e.preventDefault();
     await apiClient
-      .patch(`/api/notes/${note[0]._id}`, { title, content })
+      .patch(
+        `/api/notes/${note[0]._id}`,
+        { title, content },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      )
       .then((response) => {
         console.log(response);
         dispatch({ type: "UPDATE_NOTE", payload: response.data });
@@ -27,7 +38,12 @@ const DisplayNote = ({ displayNote, setDisplayNote }) => {
 
   const deleteNote = async () => {
     await apiClient
-      .delete(`/api/notes/${note[0]._id}`)
+      .delete(`/api/notes/${note[0]._id}`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+      })
       .then((response) => {
         console.log(response);
         dispatch({ type: "DELETE_NOTE", payload: { _id: note[0]._id } });

@@ -8,7 +8,8 @@ const createNote = async (req, res) => {
 
   try {
     const { title, content } = req.body;
-    const note = await Note.create({ title, content });
+    const user_id = req.user._id;
+    const note = await Note.create({ title, content, user_id });
     return res.status(200).send(note);
   } catch (err) {
     console.log(err);
@@ -32,7 +33,8 @@ const getNote = async (req, res) => {
 
 const getNotes = async (req, res) => {
   try {
-    const notes = await Note.find();
+    const user_id = req.user._id;
+    const notes = await Note.find({ user_id }).sort({ createdAt: -1 });
     return res.status(200).send(notes);
   } catch (err) {
     console.log(err);
