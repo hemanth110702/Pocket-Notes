@@ -12,7 +12,7 @@ const allowedOrigins = [
   "https://pocket-notes-ui.vercel.app/",
 ];
 
-/* app.use(
+app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
@@ -24,9 +24,8 @@ const allowedOrigins = [
     methods: ["GET", "POST", "PATCH", "DELETE"],
     allowedHeaders: ["Authorization", "Content-Type"],
   })
-); */
+); 
 
-app.use(cors());
 
 app.use(express.json());
 app.use("/api/user/", userRoute);
