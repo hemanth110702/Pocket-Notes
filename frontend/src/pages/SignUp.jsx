@@ -22,7 +22,7 @@ const Signup = () => {
       "
       onSubmit={handleSubmit}
     >
-      <h1 className="text-2xl font-bold text-center mb-6 bg-red-300 rounded-xl font-lobster p-2">
+      <h1 className="text-2xl font-bold text-center mb-6 bg-red-300 rounded-xl font-lobster p-2 dark:text-white">
         Sign Up
       </h1>
       <label className="font-semibold" htmlFor="email">
@@ -49,7 +49,7 @@ const Signup = () => {
       />
       <button
         className="mt-4 bg-blue-500 font-bold text-white w-fit self-center p-2 rounded-lg hover:bg-blue-700 disabled:bg-blue-300
-        transition duration-50 ease-in hover:ease-in"
+        transition duration-50 ease-in hover:ease-in "
         disabled={isLoading}
       >
         Sign Up

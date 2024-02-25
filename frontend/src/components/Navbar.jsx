@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <nav
       className="flex justify-between bg-red-400 p-2 border-b-2 dark:bg-black transition duration-50 ease-in hover:ease-in 
-    dark:border-slate-600"
+    dark:border-slate-600 "
     >
       <div className="flex items-center gap-2">
         <img className="w-10" src="/logo.png" alt="logo" />
@@ -72,14 +72,14 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <Link
             className="p-1 rounded-xl  hover:border-red-400 font-bold bg-red-400 hover:bg-pink-400 hover:text-white
-            sm:p-2  transition duration-50 ease-out hover:ease-in"
+            sm:p-2  transition duration-50 ease-out hover:ease-in dark:text-white dark:hover:text-black"
             to="/login"
           >
             Login
           </Link>
           <Link
             className="p-1 rounded-xl  hover:border-red-400 font-bold bg-red-400 hover:bg-pink-400 hover:text-white sm:p-2
-            transition duration-50 ease-in hover:ease-in"
+            transition duration-50 ease-in hover:ease-in dark:text-white dark:hover:text-black"
             to="/signup"
           >
             Sign Up

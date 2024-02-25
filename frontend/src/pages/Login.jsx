@@ -20,7 +20,7 @@ const Login = () => {
       className="bg-red-500 flex flex-col w-fit m-auto mt-16 p-10 rounded-bl-full rounded-br-full"
       onSubmit={handleSubmit}
     >
-      <h1 className="text-2xl font-bold text-center mb-6 bg-red-300 rounded-xl font-lobster p-2">
+      <h1 className="text-2xl font-bold text-center mb-6 bg-red-300 rounded-xl font-lobster p-2  dark:text-white">
         Login
       </h1>
       <label className="font-semibold" htmlFor="email">
