@@ -17,17 +17,19 @@ const Login = () => {
 
   return (
     <form
-      className="bg-green-500 flex flex-col w-80 m-auto mt-16 p-10 rounded-xl"
+      className="bg-red-500 flex flex-col w-fit m-auto mt-16 p-10 rounded-bl-full rounded-br-full"
       onSubmit={handleSubmit}
     >
-      <h1 className="text-2xl font-bold text-center mb-6">Login</h1>
+      <h1 className="text-2xl font-bold text-center mb-6 bg-red-300 rounded-xl font-lobster p-2">
+        Login
+      </h1>
       <label className="font-semibold" htmlFor="email">
         Email
       </label>
       <input
         type="email"
         id="email"
-        className="outline-none focus:outline-blue-600 text-sm p-1 rounded-sm  invalid:outline-red-500 "
+        className="outline-none focus:outline-blue-600 text-sm p-1 rounded-sm  invalid:outline-yellow-300 "
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         required
@@ -38,13 +40,13 @@ const Login = () => {
       <input
         type="text"
         id="pwd"
-        className="outline-none focus:outline-blue-600 text-sm p-1 rounded-sm  invalid:outline-red-500 "
+        className=" outline-none focus:outline-blue-600 text-sm p-1 rounded-sm  invalid:outline-red-500  "
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         required
       />
       <button
-        className="mt-4 bg-blue-500 text-white w-fit self-center p-2 rounded-lg hover:bg-blue-700 disabled:bg-blue-300"
+        className="mt-4 bg-blue-500 text-white font-bold transition duration-50 ease-in hover:ease-in w-fit self-center p-2 rounded-lg hover:bg-blue-700 disabled:bg-blue-300"
         disabled={isLoading}
       >
         Login

@@ -5,7 +5,7 @@ export const useLogout = () => {
   const { dispatch } = useAuthContext();
   const { dispatch: NotesDispatch } = useNotesContext();
   const logout = () => {
-    localStorage.removeItem("workoutUSer");
+    localStorage.removeItem("pocketNoteUser");
     dispatch({ type: "LOGOUT" });
     NotesDispatch({ type: "SET_NOTES", payload: null });
   };

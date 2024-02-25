@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        lobster: ["Lobster", "sans-serif"],
+      },
+      screens: {
+        ssm: "355px",
+        nssm: "470px",
+      },
+    },
   },
   plugins: [],
 };

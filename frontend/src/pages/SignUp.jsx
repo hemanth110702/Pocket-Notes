@@ -18,10 +18,13 @@ const Signup = () => {
 
   return (
     <form
-      className="bg-green-500 flex flex-col w-80 m-auto mt-16 p-10 rounded-xl"
+      className="bg-red-500 flex flex-col w-fit m-auto mt-16 p-10 rounded-bl-full rounded-br-full
+      "
       onSubmit={handleSubmit}
     >
-      <h1 className="text-2xl font-bold text-center mb-6">Sign Up</h1>
+      <h1 className="text-2xl font-bold text-center mb-6 bg-red-300 rounded-xl font-lobster p-2">
+        Sign Up
+      </h1>
       <label className="font-semibold" htmlFor="email">
         Email
       </label>
@@ -45,7 +48,8 @@ const Signup = () => {
         required
       />
       <button
-        className="mt-4 bg-blue-500 text-white w-fit self-center p-2 rounded-lg hover:bg-blue-700 disabled:bg-blue-300"
+        className="mt-4 bg-blue-500 font-bold text-white w-fit self-center p-2 rounded-lg hover:bg-blue-700 disabled:bg-blue-300
+        transition duration-50 ease-in hover:ease-in"
         disabled={isLoading}
       >
         Sign Up

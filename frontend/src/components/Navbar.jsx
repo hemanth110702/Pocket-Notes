@@ -10,21 +10,38 @@ const Navbar = () => {
     logout();
   };
   return (
-    <nav>
-      <h1 className="text-2xl font-bold">NavBar</h1>
-      <p>{user && user.email}</p>
-      {user && <button onClick={handleLogout}>Logout</button>}
+    <nav className="flex justify-between bg-red-400 p-2 border-b-2">
+      <div className="flex items-center gap-2">
+        <img className="w-10" src="/logo.png" alt="logo" />
+        <h1 className="text-lg font-bold font-lobster ssm:text-2xl">
+          Pocket Notes
+        </h1>
+      </div>
+      <div className="flex items-center flex-col ssm:gap-2 ssm:flex-row">
+        <div className="font-time">{user && user.email.split("@")[0]}</div>
+        {user && (
+          <button
+            className="p-2 rounded-xl  hover:border-red-400 font-bold bg-red-400 hover:bg-pink-400 hover:text-white
+             transition duration-50 ease-in hover:ease-in"
+            onClick={handleLogout}
+          >
+            Logout
+          </button>
+        )}
+      </div>
 
       {!user && (
-        <div>
+        <div className="flex items-center gap-2">
           <Link
-            className="mr-4 hover:bg-green-500 p-4 hover:text-white"
+            className="p-1 rounded-xl  hover:border-red-400 font-bold bg-red-400 hover:bg-pink-400 hover:text-white
+            sm:p-2  transition duration-50 ease-out hover:ease-in"
             to="/login"
           >
             Login
           </Link>
           <Link
-            className="mr-4 hover:bg-green-500 p-4 hover:text-white"
+            className="p-1 rounded-xl  hover:border-red-400 font-bold bg-red-400 hover:bg-pink-400 hover:text-white sm:p-2
+            transition duration-50 ease-in hover:ease-in"
             to="/signup"
           >
             Sign Up
