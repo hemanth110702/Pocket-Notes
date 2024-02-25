@@ -9,7 +9,7 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://pocket-notes-ui.vercel.app/",
+  "https://pocket-notes-ui.vercel.app",
 ];
 
 app.use(
@@ -24,8 +24,7 @@ app.use(
     methods: ["GET", "POST", "PATCH", "DELETE"],
     allowedHeaders: ["Authorization", "Content-Type"],
   })
-); 
-
+);
 
 app.use(express.json());
 app.use("/api/user/", userRoute);
