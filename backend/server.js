@@ -7,19 +7,20 @@ const userRoute = require("./Routes/userRoute");
 const cors = require("cors");
 const app = express();
 
-const allowedOrigins = [
+/* const allowedOrigins = [
   "http://localhost:5173",
   "https://pocket-notes-ui.vercel.app",
 ];
-
-app.use(
+ */
+/* app.use(
   cors({
     origin: "*",
     methods: ["GET", "POST", "PATCH", "DELETE"],
     allowedHeaders: ["Authorization", "Content-Type"],
   })
-);
+); */
 
+app.use(cors());
 app.use(express.json());
 app.use("/api/user/", userRoute);
 app.use("/api/notes", noteRoute);
