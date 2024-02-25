@@ -3,7 +3,7 @@ import { useNotesContext } from "../context/NotesContext";
 import apiClient from "../services/apiClient";
 import { useAuthContext } from "../context/AuthContext";
 
-const CreateNote = ({ setShowCreateNote }) => {
+const CreateNote = ({ setShowCreateNote, setLoading }) => {
   const { user } = useAuthContext();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -13,6 +13,7 @@ const CreateNote = ({ setShowCreateNote }) => {
 
   const createNote = async (e) => {
     e.preventDefault();
+    setLoading(true);
     await apiClient
       .post(
         "/api/notes",
@@ -32,9 +33,11 @@ const CreateNote = ({ setShowCreateNote }) => {
         dispatch({ type: "CREATE_NOTE", payload: response.data });
         setError("");
         setShowCreateNote(false);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
         setError(err.response.data);
       });
   };

@@ -4,7 +4,7 @@ import apiClient from "../services/apiClient";
 import { useAuthContext } from "../context/AuthContext";
 import { format } from "date-fns";
 
-const DisplayNote = ({ displayNote, setDisplayNote }) => {
+const DisplayNote = ({ displayNote, setDisplayNote, setLoading }) => {
   const { user } = useAuthContext();
   const { notes, dispatch } = useNotesContext();
   const note = notes.filter((note) => note._id === displayNote);
@@ -13,7 +13,9 @@ const DisplayNote = ({ displayNote, setDisplayNote }) => {
   const [error, setError] = useState("");
 
   const updateNote = async (e) => {
+    
     e.preventDefault();
+    setLoading(true)
     await apiClient
       .patch(
         `/api/notes/${note[0]._id}`,
@@ -34,14 +36,17 @@ const DisplayNote = ({ displayNote, setDisplayNote }) => {
           n._id === response.data._id ? response.data : n
         );
         dispatch({ type: "SET_NOTES", payload: updatedNotes });
+        setLoading(false)
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false)
         setError(err.response.data);
       });
   };
 
   const deleteNote = async () => {
+    setLoading(true)
     await apiClient
       .delete(`/api/notes/${note[0]._id}`, {
         headers: {
@@ -53,9 +58,11 @@ const DisplayNote = ({ displayNote, setDisplayNote }) => {
         console.log(response);
         dispatch({ type: "DELETE_NOTE", payload: { _id: note[0]._id } });
         setError("");
+        setLoading(false)
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false)
         setError(err.response.data);
       });
   };
