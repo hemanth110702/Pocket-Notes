@@ -4,13 +4,15 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./context/AuthContext";
+import { useThemeContext } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
 
 function App() {
   const { user } = useAuthContext();
+  const { darkTheme } = useThemeContext();
 
   return (
-    <>
+    <div className={darkTheme ? "dark" : ""}>
       <Navbar />
       <div>
         <Routes>
@@ -25,7 +27,7 @@ function App() {
           />
         </Routes>
       </div>
-    </>
+    </div>
   );
 }
 

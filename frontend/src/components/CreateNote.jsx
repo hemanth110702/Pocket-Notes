@@ -44,56 +44,59 @@ const CreateNote = ({ setShowCreateNote }) => {
   };
 
   return (
-    <form className="p-6 fixed border-2  border-black bg-gray-200 top-2 bottom-5 left-1/2 -translate-x-1/2 w-9/12 rounded-xl ">
-      <label className="text-2xl font-bold" htmlFor="title">
-        Title :
-      </label>{" "}
-      <br />
-      <input
-        type="text"
-        id="title"
-        className=" border-b-2 text-2xl border-black my-2 p-2 w-full outline-none"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        required
-      />{" "}
-      <br />
-      <label className="text-2xl font-bold" htmlFor="content">
-        Content :
-      </label>
-      <br />
-      <textarea
-        id="content"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        required
-        className="block w-full p-4 border border-gray-300 rounded-lg resize-none h-4/6 outline-none text-lg"
-      />
-      <br />
-      <div className="mt-auto flex flex-col justify-center items-center gap-2 nssm:flex-row  nssm:justify-between">
-        {error ? (
-          <div className="nssm:border-2 border-red-600 text-red-600 self-center nssm:p-2 rounded-lg">
-            {error}
-          </div>
-        ) : (
-          <div className="border-2 border-transparent p-2 rounded-lg invisible">
-            Placeholder
-          </div>
-        )}
-        <button
-          onClick={createNote}
-          className="bg-green-500 p-2 rounded-xl nssm:mr-4 hover:bg-green-400 transition duration-50 ease-in hover:ease-in"
-        >
-          Create
-        </button>
-        <button
-          onClick={closeNote}
-          className="p-2 rounded-xl absolute top-2 right-6 font-bold hover:bg-orange-500 transition duration-50 ease-in hover:ease-in"
-        >
-          X
-        </button>
-      </div>
-    </form>
+    <>
+      <div className="fixed inset-0 bg-black opacity-50 z-50"></div>
+      <form className="p-6 fixed border-2  border-black bg-gray-200 z-50 top-2 bottom-5 left-1/2 -translate-x-1/2 w-9/12 rounded-xl ">
+        <label className="text-2xl font-bold" htmlFor="title">
+          Title :
+        </label>{" "}
+        <br />
+        <input
+          type="text"
+          id="title"
+          className=" border-b-2 text-2xl border-black my-2 p-2 w-full outline-none"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
+        />{" "}
+        <br />
+        <label className="text-2xl font-bold" htmlFor="content">
+          Content :
+        </label>
+        <br />
+        <textarea
+          id="content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          required
+          className="block w-full p-4 border border-gray-300 rounded-lg resize-none h-4/6 outline-none text-lg"
+        />
+        <br />
+        <div className="mt-auto flex flex-col justify-center items-center gap-2 nssm:flex-row  nssm:justify-between">
+          {error ? (
+            <div className="nssm:border-2 border-red-600 text-red-600 self-center nssm:p-2 rounded-lg">
+              {error}
+            </div>
+          ) : (
+            <div className="border-2 border-transparent p-2 rounded-lg invisible">
+              Placeholder
+            </div>
+          )}
+          <button
+            onClick={createNote}
+            className="bg-green-500 p-2 rounded-xl nssm:mr-4 hover:bg-green-400 transition duration-50 ease-in hover:ease-in"
+          >
+            Create
+          </button>
+          <button
+            onClick={closeNote}
+            className="p-2 rounded-xl absolute top-2 right-6 font-bold hover:bg-orange-500 transition duration-50 ease-in hover:ease-in"
+          >
+            X
+          </button>
+        </div>
+      </form>
+    </>
   );
 };
 

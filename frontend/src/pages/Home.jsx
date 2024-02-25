@@ -49,13 +49,13 @@ const Home = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-center gap-2 mt-4 ">
+      <div className="flex items-center justify-center gap-2 pt-4  ">
         <input
           type="search"
           placeholder="Search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="py-2 px-4 rounded-full w-2/6 border-2 border-red-500 outline-none "
+          className="py-2 px-4 rounded-full w-2/6 border-2 border-red-500 outline-none dark:border-slate-500"
         />
         <button
           className="px-4 py-2 rounded-2xl bg-blue-400 font-semibold  hover:bg-blue-300
