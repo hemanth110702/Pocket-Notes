@@ -13,9 +13,8 @@ const DisplayNote = ({ displayNote, setDisplayNote, setLoading }) => {
   const [error, setError] = useState("");
 
   const updateNote = async (e) => {
-    
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     await apiClient
       .patch(
         `/api/notes/${note[0]._id}`,
@@ -36,17 +35,17 @@ const DisplayNote = ({ displayNote, setDisplayNote, setLoading }) => {
           n._id === response.data._id ? response.data : n
         );
         dispatch({ type: "SET_NOTES", payload: updatedNotes });
-        setLoading(false)
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
-        setLoading(false)
+        setLoading(false);
         setError(err.response.data);
       });
   };
 
   const deleteNote = async () => {
-    setLoading(true)
+    setLoading(true);
     await apiClient
       .delete(`/api/notes/${note[0]._id}`, {
         headers: {
@@ -58,11 +57,11 @@ const DisplayNote = ({ displayNote, setDisplayNote, setLoading }) => {
         console.log(response);
         dispatch({ type: "DELETE_NOTE", payload: { _id: note[0]._id } });
         setError("");
-        setLoading(false)
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
-        setLoading(false)
+        setLoading(false);
         setError(err.response.data);
       });
   };
@@ -70,7 +69,7 @@ const DisplayNote = ({ displayNote, setDisplayNote, setLoading }) => {
   return (
     <>
       <div className="fixed inset-0 bg-black opacity-50 z-50"></div>
-      <form className="p-6 border-2  border-black bg-gray-200 fixed top-2 bottom-5 left-1/2 -translate-x-1/2 w-9/12 rounded-xl z-50  ">
+      <form className="p-6 border-2 dark:bg-gray-500  border-black bg-gray-200 fixed top-2 bottom-20 left-1/2 -translate-x-1/2 w-9/12 rounded-xl z-50  ">
         <label className="text-2xl font-bold" htmlFor="title">
           Title :
         </label>
@@ -78,7 +77,7 @@ const DisplayNote = ({ displayNote, setDisplayNote, setLoading }) => {
         <input
           type="text"
           id="title"
-          className=" border-b-2 text-2xl border-black my-2 p-2 w-full outline-none"
+          className=" border-b-2 text-2xl border-black my-2 p-2 w-full outline-none dark:bg-slate-300"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
@@ -93,7 +92,7 @@ const DisplayNote = ({ displayNote, setDisplayNote, setLoading }) => {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           required
-          className="block w-full p-4 border border-gray-300 rounded-lg resize-none h-4/6 outline-none text-lg"
+          className="block w-full p-4 border border-gray-300 rounded-lg resize-none h-3/6 outline-none text-lg dark:bg-slate-300"
         />
         <br />
         <div className="flex justify-between gap-2">

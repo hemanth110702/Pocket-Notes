@@ -74,13 +74,14 @@ Pocket-Notes is a MERN project enabling users to securely store and access their
 
 ## Screenshots
 
-<!-- <table>
+### Light Theme
+<table>
     <tr>
         <th>Desktop View</th>
         <th>Mobile View</th>
     </tr>
     <tr>
-      <td colspan="3" style="text-align: left;font-weight: bold;">Home</td>
+      <td colspan="3" style="text-align: left;font-weight: bold;">Login</td>
     </tr>
     <tr>
         <td>
@@ -134,7 +135,7 @@ Pocket-Notes is a MERN project enabling users to securely store and access their
             <img src="https://github.com/hemanth110702/GameStash/assets/89832451/b8163ab7-60da-4aa4-b7dd-45c3f01b0d68" width="100%" title="Mobile view - Light theme"/>
         </td>
     </tr> 
-</table> -->
+</table>
 
 ## Link
 

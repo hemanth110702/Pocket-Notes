@@ -55,22 +55,21 @@ const Home = () => {
 
   return (
     <div className="flex flex-col justify-center">
-      <div className="flex items-center justify-center gap-2 pt-4">
+      <div className="flex items-center justify-center gap-2 p-4">
         <input
           type="search"
           placeholder="Search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="py-2 px-4 rounded-full w-2/6 border-2 border-red-500 outline-none dark:border-slate-500"
+          className="py-2 px-4 rounded-full w-full md:w-2/3 lg:w-1/3 xl:w-1/4 border-2 border-red-500 outline-none dark:border-slate-500"
         />
         <button
           className="px-4 py-2 rounded-2xl bg-blue-400 font-semibold hover:bg-blue-300
-              transition duration-50 ease-in hover:ease-in"
+        transition duration-50 ease-in hover:ease-in"
           onClick={addNote}
         >
           New
-        </button>{" "}
-        <br />
+        </button>
       </div>
       <div className="flex flex-wrap justify-center items-center mt-6">
         {loading ? (

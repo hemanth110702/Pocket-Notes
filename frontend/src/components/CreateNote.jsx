@@ -49,7 +49,7 @@ const CreateNote = ({ setShowCreateNote, setLoading }) => {
   return (
     <>
       <div className="fixed inset-0 bg-black opacity-50 z-50"></div>
-      <form className="p-6 fixed border-2  border-black bg-gray-200 z-50 top-2 bottom-5 left-1/2 -translate-x-1/2 w-9/12 rounded-xl ">
+      <form className="p-6 fixed border-2 dark:bg-gray-500 border-black bg-gray-200 z-50 top-2 bottom-20 left-1/2 -translate-x-1/2 w-9/12 rounded-xl  ">
         <label className="text-2xl font-bold" htmlFor="title">
           Title :
         </label>{" "}
@@ -57,7 +57,7 @@ const CreateNote = ({ setShowCreateNote, setLoading }) => {
         <input
           type="text"
           id="title"
-          className=" border-b-2 text-2xl border-black my-2 p-2 w-full outline-none"
+          className=" border-b-2 text-2xl border-black my-2 p-2 w-full outline-none dark:bg-slate-300"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
@@ -72,7 +72,7 @@ const CreateNote = ({ setShowCreateNote, setLoading }) => {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           required
-          className="block w-full p-4 border border-gray-300 rounded-lg resize-none h-4/6 outline-none text-lg"
+          className="block w-full p-4 border border-gray-300 rounded-lg resize-none h-3/6  outline-none text-lg dark:bg-slate-300"
         />
         <br />
         <div className="mt-auto flex flex-col justify-center items-center gap-2 nssm:flex-row  nssm:justify-between">
