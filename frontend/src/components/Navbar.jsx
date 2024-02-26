@@ -14,9 +14,9 @@ const Navbar = () => {
 
   useEffect(() => {
     if (darkTheme) {
-      document.body.style.backgroundColor = "#4c4d4f"; // Set dark mode background color
+      document.body.style.backgroundColor = "#4c4d4f";
     } else {
-      document.body.style.backgroundColor = "#FFFFFF"; // Set light mode background color
+      document.body.style.backgroundColor = "#FFFFFF";
     }
   }, [darkTheme]);
 
@@ -40,18 +40,20 @@ const Navbar = () => {
         </h1>
       </div>
 
-      <div>
-        <button
-          onClick={() => changeTheme()}
-          className="bg-white rounded-full p-1"
-        >
-          <img
-            className="w-10 h-10"
-            src={darkTheme ? "/sun.png" : "/moon.png"}
-            alt=""
-          />
-        </button>
-      </div>
+      {user && (
+        <div className="self-center ">
+          <button
+            onClick={() => changeTheme()}
+            className="bg-white rounded-full p-1 hover:shadow-slate-500/50 hover:shadow-lg dark:hover:shadow-pink-500/50"
+          >
+            <img
+              className="w-6 h-6"
+              src={darkTheme ? "/sun.png" : "/moon.png"}
+              alt=""
+            />
+          </button>
+        </div>
+      )}
 
       <div className="flex items-center flex-col ssm:gap-2 ssm:flex-row">
         <div className="font-time dark:text-white">
@@ -60,7 +62,8 @@ const Navbar = () => {
         {user && (
           <button
             className="p-2 rounded-xl  hover:border-red-400 font-bold bg-red-400 hover:bg-pink-400 hover:text-white
-             transition duration-50 ease-in hover:ease-in dark:text-white dark:hover:text-black"
+             transition duration-50 ease-in hover:ease-in dark:text-white dark:bg-slate-800
+            dark:hover:bg-red-500"
             onClick={handleLogout}
           >
             Logout
@@ -72,14 +75,15 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           <Link
             className="p-1 rounded-xl  hover:border-red-400 font-bold bg-red-400 hover:bg-pink-400 hover:text-white
-            sm:p-2  transition duration-50 ease-out hover:ease-in dark:text-white dark:hover:text-black"
+            sm:p-2  transition duration-50 ease-out hover:ease-in dark:text-white dark:hover:text-black dark:bg-slate-800
+            dark:hover:bg-red-500 "
             to="/login"
           >
             Login
           </Link>
           <Link
             className="p-1 rounded-xl  hover:border-red-400 font-bold bg-red-400 hover:bg-pink-400 hover:text-white sm:p-2
-            transition duration-50 ease-in hover:ease-in dark:text-white dark:hover:text-black"
+            transition duration-50 ease-in hover:ease-in dark:text-white dark:hover:text-black dark:hover:bg-red-500 dark:bg-slate-800"
             to="/signup"
           >
             Sign Up
