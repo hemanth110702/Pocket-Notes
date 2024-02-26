@@ -54,6 +54,7 @@ Pocket-Notes is a MERN project enabling users to securely store and access their
    npm run dev
    ```
 4. Now Go to frontend folder:
+
    ```bash
    npm install
    ```
@@ -75,6 +76,7 @@ Pocket-Notes is a MERN project enabling users to securely store and access their
 ## Screenshots
 
 ### Light Theme
+
 <table>
     <tr>
         <th>Desktop View</th>
@@ -85,54 +87,118 @@ Pocket-Notes is a MERN project enabling users to securely store and access their
     </tr>
     <tr>
         <td>
-            <img src="https://github.com/hemanth110702/GameStash/assets/89832451/f64c3486-94b6-4438-a225-b00c855dd38f" width="100%" title="Desktop view - Home"/>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/2a5a85e1-e356-4e5e-95df-c5677bed1232" width="100%" title="Desktop view - Login"/>
         </td>
         <td>
-            <img src="https://github.com/hemanth110702/GameStash/assets/89832451/3be65b33-25d6-4a26-a29d-ffdeaaec279e" width="100%" title="Mobile view - Home"/>
-        </td>
-    </tr>
-    <tr>
-      <td colspan="3" style="text-align: left;font-weight: bold;">My Games</td>
-    </tr>
-    <tr>
-        <td>
-            <img src="https://github.com/hemanth110702/GameStash/assets/89832451/be8311fa-8a60-4092-9109-5f3b206d299c" width="100%" title="Desktop view - MyGames"/>
-        </td>
-        <td>
-            <img src="https://github.com/hemanth110702/GameStash/assets/89832451/13420c04-f6a8-4802-be77-a88b155ee6b5" width="100%" title="Mobile view - MyGames"/>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/6eda8f50-3e7c-4e9b-80d6-f71d0892b5e7" width="100%" title="Mobile view - Login"/>
         </td>
     </tr>
     <tr>
-      <td colspan="3" style="text-align: left;font-weight: bold;">Game Info</td>
+      <td colspan="3" style="text-align: left;font-weight: bold;">Sign Up</td>
     </tr>
     <tr>
         <td>
-            <img src="https://github.com/hemanth110702/GameStash/assets/89832451/db91fae3-130d-4cf1-865f-932fda439bac" width="100%" title="Desktop view - Game Info"/>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/08826faa-a1a5-4013-869f-5242ee1e2690" width="100%" title="Desktop view - Sign Up"/>
         </td>
         <td>
-            <img src="https://github.com/hemanth110702/GameStash/assets/89832451/98b8c2da-1649-4b2c-aa40-666f45bd97a2" width="100%" title="Mobile view - Game Info"/>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/8b3f8790-0a24-4ee6-ae72-c7b687c9f954" width="100%" title="Mobile view - Sign Up"/>
         </td>
     </tr>
     <tr>
-      <td colspan="3" style="text-align: left;font-weight: bold;">Game Info - video, photos</td>
+      <td colspan="3" style="text-align: left;font-weight: bold;">Home and hovering state over note</td>
     </tr>
     <tr>
         <td>
-            <img src="https://github.com/hemanth110702/GameStash/assets/89832451/db91fae3-130d-4cf1-865f-932fda439bac" width="100%" title="Desktop view - Game Info"/>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/b9c2827b-0cda-45d1-8dfd-4188ccff71ed" width="100%" title="Desktop view - Home"/>
         </td>
         <td>
-            <img src="https://github.com/hemanth110702/GameStash/assets/89832451/dfe79e92-c5cc-4872-b4dd-deaa17c7d6a8" width="100%" title="Mobile view - Game Info"/>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/9b97e648-c41b-4abe-af22-4b2a75e99902" width="100%" title="Mobile view - Home"/>
+        </td>
+    </tr>
+    <tr>
+      <td colspan="3" style="text-align: left;font-weight: bold;">Create Note</td>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/1aa246c1-469e-46db-95ee-ba9e5af0b7b9" width="100%" title="Desktop view - Create Note"/>
+        </td>
+        <td>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/bb557231-bc6f-482b-87ef-b08bb4c56c5c" width="100%" title="Mobile view - Create Note"/>
         </td>
     </tr> 
     <tr>
-      <td colspan="3" style="text-align: left;font-weight: bold;">Light theme</td>
+      <td colspan="3" style="text-align: left;font-weight: bold;">Display Note</td>
     </tr>
     <tr>
         <td>
-            <img src="https://github.com/hemanth110702/GameStash/assets/89832451/18cda281-7f90-4244-93ab-9689f451b20f" width="100%" title="Desktop view - Light theme"/>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/263a749f-2771-4fdb-8e78-e4e966ec2b8d" width="100%" title="Desktop view - Display Note"/>
         </td>
         <td>
-            <img src="https://github.com/hemanth110702/GameStash/assets/89832451/b8163ab7-60da-4aa4-b7dd-45c3f01b0d68" width="100%" title="Mobile view - Light theme"/>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/d151d2f2-135f-4fa3-8799-d8ee9496ffc9" width="100%" title="Mobile view - Display Note"/>
+        </td>
+    </tr> 
+</table>
+
+### Dark Theme
+
+<table>
+    <tr>
+        <th>Desktop View</th>
+        <th>Mobile View</th>
+    </tr>
+    <tr>
+      <td colspan="3" style="text-align: left;font-weight: bold;">Login</td>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/b9633ff6-289c-428b-98d7-4b02c5c889dc" width="100%" title="Desktop view - Login"/>
+        </td>
+        <td>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/0362a62b-03fc-4899-8441-44bb84a320a3" width="100%" title="Mobile view - Login"/>
+        </td>
+    </tr>
+    <tr>
+      <td colspan="3" style="text-align: left;font-weight: bold;">Sign Up</td>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/011ef85b-7290-4eee-9296-6f70923782c2" width="100%" title="Desktop view - Sign Up"/>
+        </td>
+        <td>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/a91c9898-9310-4b1a-aed7-6bf148fac3c8" width="100%" title="Mobile view - Sign Up"/>
+        </td>
+    </tr>
+    <tr>
+      <td colspan="3" style="text-align: left;font-weight: bold;">Home and hovering state over note</td>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/fd268ee6-c3b7-4096-8861-ad9a6479ccb3" width="100%" title="Desktop view - Home"/>
+        </td>
+        <td>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/273e8156-786c-4504-9810-ec55accacc91" width="100%" title="Mobile view - Home"/>
+        </td>
+    </tr>
+    <tr>
+      <td colspan="3" style="text-align: left;font-weight: bold;">Create Note</td>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/bc7671d7-1b4e-4a67-aa08-cb6b4af57f07" width="100%" title="Desktop view - Create Note"/>
+        </td>
+        <td>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/ace4e7d1-e4ce-416d-a726-d018f9bd543b" width="100%" title="Mobile view - Create Note"/>
+        </td>
+    </tr> 
+    <tr>
+      <td colspan="3" style="text-align: left;font-weight: bold;">Display Note</td>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/4bb88cae-8f77-4219-9074-ba2116a928f5" width="100%" title="Desktop view - Display Note"/>
+        </td>
+        <td>
+            <img src="https://github.com/hemanth110702/Pocket-Notes/assets/89832451/471039e6-26c9-4678-bece-9e740aebcc53" width="100%" title="Mobile view - Display Note"/>
         </td>
     </tr> 
 </table>
