@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useLogin } from "../hooks/useLogin";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("guest@gmail.com");
+  const [password, setPassword] = useState("Guest@1234");
   const [loading, setLoading] = useState(false);
   const { login, error, isLoading } = useLogin();
 
@@ -42,7 +42,7 @@ const Login = () => {
         Password
       </label>
       <input
-        type="text"
+        type="password"
         id="pwd"
         className=" outline-none focus:outline-blue-600 text-sm p-1 rounded-sm invalid:outline-yellow-500  dark:invalid:outline-red-500  "
         value={password}
